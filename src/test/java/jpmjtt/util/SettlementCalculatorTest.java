@@ -4,8 +4,8 @@ import static org.junit.Assert.assertEquals;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,10 +17,10 @@ import jpmjtt.reporting.DailyRanking;
 public class SettlementCalculatorTest {
 
 	List<Instruction> sampleInstructions;
-	HashMap<LocalDate, BigDecimal> incomingSettlements;
-	HashMap<LocalDate, BigDecimal> outgoingSettlements;
-	HashMap<LocalDate,List<DailyRanking>> dailyIncomingRankings;
-	HashMap<LocalDate,List<DailyRanking>> dailyOutgoingRankings;
+	Map<LocalDate, BigDecimal> incomingSettlements;
+	Map<LocalDate, BigDecimal> outgoingSettlements;
+	Map<LocalDate,List<DailyRanking>> dailyIncomingRankings;
+	Map<LocalDate,List<DailyRanking>> dailyOutgoingRankings;
 	
 	@Before
 	public void initializeTestEnvironment() {

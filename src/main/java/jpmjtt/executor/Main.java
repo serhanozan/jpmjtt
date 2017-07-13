@@ -22,6 +22,7 @@ public class Main {
 		List<Instruction> sampleInstructions = SampleClientInstructions.getSampleInstructions();
 		sampleInstructions.stream().forEach(instruction->SettlementDateUtil.adjustSettlementDate(instruction));
 		ReportGenerator.generateDailySettlementsReport(sampleInstructions);
+		//sampleInstructions.stream().sorted((i1,i2)->i1.getSettlementDate().compareTo(i2.getSettlementDate())).forEach(i->System.out.println(i));
 	}
 
 }

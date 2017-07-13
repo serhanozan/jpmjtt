@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import jpmjtt.model.Instruction;
@@ -23,7 +24,7 @@ public class ReportGenerator {
 		System.out.println("\tDAILY INCOMING SETTLEMENTS");
 		System.out.println("Date" + "\t\t" + "Amount(USD)");
 		
-		HashMap<LocalDate, BigDecimal> incoming =  SettlementCalculator.calculateDailyIncomingSettlements(instructions);
+		Map<LocalDate, BigDecimal> incoming =  SettlementCalculator.calculateDailyIncomingSettlements(instructions);
 		for (LocalDate date : incoming.keySet().stream().sorted().collect(Collectors.toList())) {
 			System.out.println( date + "\t"  + incoming.get(date));
 		}
@@ -45,7 +46,7 @@ public class ReportGenerator {
 		System.out.println("\tDAILY OUTGOING SETTLEMENTS");
 		System.out.println("Date" + "\t\t" + "Amount(USD)");
 		
-		HashMap<LocalDate, BigDecimal> outgoing =  SettlementCalculator.calculateDailyOutgoingSettlements(instructions);
+		Map<LocalDate, BigDecimal> outgoing =  SettlementCalculator.calculateDailyOutgoingSettlements(instructions);
 		for (LocalDate date : outgoing.keySet().stream().sorted().collect(Collectors.toList())) {
 			System.out.println( date + "\t"  + outgoing.get(date));
 		}
